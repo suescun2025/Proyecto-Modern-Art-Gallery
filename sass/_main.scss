@@ -1,0 +1,150 @@
+@use '_variables' as v;
+@use 'mixins' as *;
+ 
+main{
+    padding: 15px;
+    margin-bottom: 100px;
+    min-width: 350px;
+    @include breakpoint(tablet){
+        padding: 30px;
+        }
+    @include breakpoint(desktop){
+        padding-left:170px;
+        }  
+
+    .main-primary{
+        @include breakpoint(tablet){
+            display: flex;
+            }
+        .img-1{
+            width: 350px;
+            height: 320px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            @include breakpoint(tablet){
+            order: 1;
+            width: 380px;
+            height: 380px;
+            }
+            @include breakpoint(tablehorizontal){
+            width: 600px;
+            }
+             @include breakpoint(desktop){
+            margin-bottom: 30px;
+            }
+        }
+        .main-description{
+            @include breakpoint(tablet){
+            width: 230px;
+            margin-right: 60px;
+            margin-top: 60px;
+            }
+            @include breakpoint(desktop){
+            width: 280px;
+            margin-right: 150px;
+            margin-top: 80px;
+            } 
+        
+            .title-primary{
+            font-family: v.$font-primary;
+            font-size: 50px;
+            text-transform: uppercase;
+            line-height: 45px;
+            margin-bottom: 15px;
+            @include breakpoint(desktop){
+                    margin-bottom: 40px;
+                    line-height: 50px;
+                } 
+            br{
+                @include breakpoint(desktop){
+                    display: none;
+                } 
+            }
+        }
+
+        .description-primary{
+            font-family: v.$font-secondary;
+            font-size: 18px;
+            color: v.$dark-grey;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 320px;
+        }
+        }
+    }
+
+    .main-secundary{
+        @include breakpoint(tablet){
+            display: flex;
+        }
+        .img-2{
+            width: 350px;
+            height: 480px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            @include breakpoint(tablet){
+            width: 380px;
+            height: 720px;
+            margin-right: 10px;
+            object-fit: fill;
+            }
+            @include breakpoint(tablehorizontal){
+            width: 600px;
+            }
+            @include breakpoint(desktop){
+           margin-right: 30px;
+            }
+        }
+
+        .img-3{
+            width: 350px;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            @include breakpoint(tablet){
+            width: 280px;
+            height: 310px;
+            margin-bottom: 5px;
+            }
+            @include breakpoint(desktop){
+            width: 400px;
+            margin-bottom: 30px;
+            }
+        }
+
+        .secundary-description{
+            background-color: v.$black;
+            padding: 50px 30px;
+            @include breakpoint(tablet){
+            width: 220px;
+            height: 300px;
+            }
+            @include breakpoint(desktop){
+            width: 320px;
+            height: 277px;
+            padding-left: 50px;
+            }
+
+            .title-secundary{
+            font-family: v.$font-primary;
+            font-size: 50px;
+            text-transform: uppercase;
+            line-height: 45px;
+            margin-bottom: 30px;
+            color: v.$white;
+            @include breakpoint(tablet){
+            margin-top: 40px;
+            }
+            }
+            .description-secundary{
+            font-family: v.$font-secondary;
+            font-size: 18px;
+            color: v.$white;
+            opacity: 0.9;
+            @include breakpoint(desktop){
+            font-size: 20px;
+            }
+            }
+        }
+    }
+}

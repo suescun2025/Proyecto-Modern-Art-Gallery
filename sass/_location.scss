@@ -1,0 +1,152 @@
+@use 'variables' as v;
+@use 'mixins' as *;
+
+.location-map{
+        background-image: url(/img/location-mobile.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 550px;
+        @include breakpoint(tablet){
+            background-image: url(/img/location-tablet.jpg);
+        }
+         @include breakpoint(desktop){
+            background-image: url(/img/location-desktop.jpg);
+        }
+        
+
+    .location-button{
+        display: flex;
+        @include breakpoint(tablet){
+            margin-left: 50px;
+        }
+        @include breakpoint(desktop){
+            margin-left: 120px;
+        }
+        .btn-location{
+        display: inline-block;
+        padding: 20px 30px;
+        background: linear-gradient(to left, v.$black 75%,v.$gold 35%);
+        color: v.$white;
+        text-decoration: none;
+        font-family:v.$font-primary;
+        letter-spacing: 3px;
+        font-size: 20px;
+        &:hover{
+                background: linear-gradient(to left, v.$gold 75%,v.$black 35%);
+            }
+            img{
+                margin-right: 30px;
+            }
+        }
+    }
+        
+    
+    .location-merket{
+        display: flex;
+        img{
+        justify-content: center;
+        }
+    }
+}
+
+.address{
+    background-color: v.$black;
+    padding: 30px 20px;
+    @include breakpoint(tablet){
+        display: flex;
+        padding: 60px 40px;
+    }
+    @include breakpoint(desktop){
+        padding-left: 150px;
+    }
+            
+
+    &-title{
+        font-family:v.$font-primary;
+        color: v.$white;
+        font-size: 48px;
+        margin-bottom: 30px;
+        @include breakpoint(tablet){
+        margin-right: 110px;
+       }
+       @include breakpoint(desktop){
+        margin-right: 350px;
+       }
+    }
+
+
+    &-street{
+        font-family: v.$font-primary;
+        color: v.$gold;
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    &-address{
+        font-family: v.$font-secondary;
+        color: v.$white;
+        opacity: 0.9;
+        font-size: 18px;
+        line-height: 30px;
+        margin-bottom: 20px;
+    }
+
+    &-description{
+        font-family: v.$font-secondary;
+        color: v.$white;
+        opacity: 0.9;
+        font-size: 18px;
+        line-height: 30px;
+        margin-bottom: 20px;
+        width: 340px;
+        @include breakpoint(tablet){
+        margin-bottom: 0;
+        width: 400px;
+       }
+        @include breakpoint(desktop){
+        margin-right: 125px;
+        width: 440px;
+       }
+    }
+
+}
+
+.location-footer{
+    padding: 50px 20px;
+    background-color: v.$gold;
+    @include breakpoint(tablet){
+           display: flex;
+           justify-content: space-around;
+        }
+
+    .footer-logo{
+            img{
+                margin-bottom: 30px;
+            }
+        }
+
+        .description-footer{
+            font-family: v.$font-secondary;
+            color: v.$black;
+            opacity: 0.9;
+            line-height: 25px;
+            margin-bottom: 40px;
+            width: 310px;
+            @include breakpoint(tablet){
+            width: 260px;
+            margin-bottom: 0;
+            }
+             @include breakpoint(desktop){
+            width: 380px;
+            }
+        }
+
+        .icon-footer{
+            display: flex;
+            gap: 15px;
+        }
+
+    
+}
+

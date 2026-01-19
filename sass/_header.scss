@@ -1,0 +1,121 @@
+@use 'variables' as v;
+@use 'mixins' as *;
+
+.header-principal{
+    @include breakpoint(tablet){
+        display: flex;
+        position: relative;
+        margin-bottom: 60px;
+        }
+        
+    &::before{
+    @include breakpoint(desktop){
+    content:"";    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 800px;
+    background-color: v.$black;
+    }
+    }
+
+    .img-header{
+        width: 100%;
+        object-fit: cover;
+        height: 220px;
+        margin-bottom: 30px;
+        @include breakpoint(tablet){
+        width: 400px;    
+        height: 700px;
+        }
+        @include breakpoint(tablehorizontal){
+        width: 500px;    
+        height: 800px;
+        }
+        @include breakpoint(desktop){
+        position: relative;
+        left: 33%;
+        } 
+        }
+    .header-content{
+        padding: 0 15px;
+        margin-bottom: 80px;
+        @include breakpoint(tablet){
+        position: absolute;
+        top: 20%;
+        left: 44%;
+        }
+        @include breakpoint(tablehorizontal){
+        left: 50%;
+        } 
+        @include breakpoint(desktop){
+        display: flex;
+        top: 24%;
+        left: 10%;
+        }
+
+       .header-title{
+        color: v.$black;
+        font-family: v.$font-primary;
+        text-transform: uppercase;
+        font-size: 60px;
+        line-height: 60px;
+        margin-bottom: 20px;
+        @include breakpoint(tablet){
+        font-size: 70px;
+        margin-bottom: 65px;
+        } 
+        @include breakpoint(desktop){
+        font-size: 92px;
+        line-height: 80px;
+        color: v.$white;
+        }
+        }
+
+        .content-second{
+              @include breakpoint(desktop){
+                position: relative;
+                left: 35%;
+            }
+        }
+
+        .header-description{
+            color: v.$dark-grey;
+            font-family: v.$font-secondary;
+            font-size: 18px;
+            margin-bottom: 30px;
+            width: 350px;
+            opacity: 0.9;
+            @include breakpoint(tablet){
+            margin-bottom: 65px;
+            }
+            @include breakpoint(desktop){
+            font-size: 22px;
+            }
+        }
+
+        .header-button{
+            display: flex;
+            .btn{
+            display: inline-block;
+            padding: 20px 30px;
+            background: linear-gradient(to right, v.$black 75%,v.$gold 35%);
+            color: v.$white;
+            text-decoration: none;
+            font-family:v.$font-primary;
+            letter-spacing: 3px;
+            font-size: 20px;
+            &:hover{
+                background: linear-gradient(to right, v.$gold 75%,v.$black 35%);
+            }
+            img{
+                margin-left: 30px;
+            }
+            
+            }
+        }
+    }
+}
+
+

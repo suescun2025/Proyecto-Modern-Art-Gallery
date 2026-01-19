@@ -1,0 +1,42 @@
+@use '_variables' as v;
+@use 'mixins' as *;
+
+
+footer{
+    background-color: v.$black;
+    .footer-principal{
+        padding: 50px 30px;
+        @include breakpoint(tablet){
+           display: flex;
+           justify-content: space-around;
+            }
+        .footer-logo{
+            img{
+                margin-bottom: 30px;
+                @include breakpoint(desktop){
+                width: 150px;
+            }
+            }
+        }
+
+        .description-footer{
+            font-family: v.$font-secondary;
+            color: v.$white;
+            opacity: 0.9;
+            line-height: 25px;
+            margin-bottom: 40px;
+            @include breakpoint(tablet){
+            width: 260px;
+            margin-bottom: 0;
+            }
+            @include breakpoint(desktop){
+            width: 380px;
+            }
+        }
+
+        .icon-footer{
+            display: flex;
+            gap: 15px;
+        }
+    }
+}
